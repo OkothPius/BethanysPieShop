@@ -42,7 +42,7 @@ namespace BethanysPieShop.Controllers
 
             if (string.IsNullOrEmpty(category))
             {
-                pies = _pieRepository.AllPies.OrderBy(p => p.PieId);
+                pies = _pieRepository.AllPies;
                 currentCategory = "All pies";
             }
             else
