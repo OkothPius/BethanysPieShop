@@ -17,7 +17,7 @@ namespace BethanysPieShop.Controllers
         public IActionResult Checkout()
         {
             return View();
-        }
+        }   
 
         [HttpPost]
         public IActionResult Checkout(Order order) 
@@ -34,6 +34,8 @@ namespace BethanysPieShop.Controllers
             {
                 _orderRepository.CreateOrder(order);
                 _shoppingCart.ClearCart();
+
+
                 return RedirectToAction("CheckoutComplete");
             }
             return View(order);
